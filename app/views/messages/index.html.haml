@@ -1,68 +1,54 @@
-%p.notification チャットグループが作成されました
+.notification
+  %p チャットグループが作成されました
 
- .chat
-   .nav-user
-     .chat-user
-       %h5 Katsuya Hirayasu
-       %i
-         = fa_icon "pencil-square-o"
-         = fa_icon "cog"
-
-   .nav-chat
-     .chat-group
-       .chat-group__name
-         %p MDS
-       .chat-group__message
-         %p awesome
-     .chat-group
-       .chat-group__name
-         %p No Name
-       .chat-group__message
-         %p まだメッセージはありません
-     .chat-group
-       .chat-group__name
-         %p Japan national soccer team
-       .chat-group__message
-         %p 最高
-     .chat-group
-       .chat-group__name
-         %p DNM
-       .chat-group__message
-         %p まだメッセージはありません
-
-   .chat-main
-     .chat-header
-       .chat-header--left
-         %h2 MDS
-         .chat-header__members
-           %p Members:
-         .chat-header__user
-           %span Katsuya Hirayasu
-       .chat-header-right
-         .chat-header__edit-btn
-           = link_to "Edit"
-     .chat-body
-       .chat-messages
-         .chat-message
-           .chat-message__user
-             %p Katsuya Hirayasu
-           .chat-message__time
-             %p 2016/12/22 21:15:12
-           .chat-message__text
-             %p きゃっほー
-         .chat-message
-           .chat-message__user
-             %p Ema Watson
-           .chat-message__time
-             %p 2016/12/28 15:45:23
-     .chat-footer
-       .new_message
-         %form {action: "#", method: "post"}
-         .new_message_body
-           %textarea {row: "1", placeholder: "type a message"}
-         .new_message_image
-           %input_message {type: "file" }
-           %i
-             = fa_icon "image"
-          %input {type: "submit", value: "Send"}
-View
+.chat
+  .sidebar
+    .chat-user
+      .chat-user__name
+        %h5 Yuta Katahira
+      .chat-user__btn
+        %i
+          = fa_icon "pencil-square-o"
+          = fa_icon "cog"
+    .chat-groups
+      .chat-group
+        .chat-group__name
+          %p MDS
+        .chat-group__message
+          %p awesome
+      .chat-group
+        .chat-group__name
+          %p No Name
+        .chat-group__message
+          %p まだメッセージはありません
+  .chat-main
+    .chat-header
+      .chat-header__left
+        %h2 MDS
+        %p Members: Yuta Katahira
+      .chat-header__right
+        %a Edit
+    .chat-body
+      .chat-messages
+        .chat-message
+          .chat-message__user
+            %p Yuta Katahira
+          .chat-message__time
+            %p 2016/12/22 21:15:12
+          .chat-message__text
+            %p きゃっほー
+        .chat-message
+          .chat-message__user
+            %p Ema Watson
+          .chat-message__time
+            %p 2016/12/28 15:45:23
+          .chat-message__text
+            %p where ever you are
+    .chat-footer
+      %form{ action: "#", method: "post"}
+      .chat-footer__body
+        %textarea{row: "1", placeholder: "type a message"}
+        .chat-footer__file
+          %i
+            = fa_icon "image"
+      %input{type: "submit", value: 'Send'}
