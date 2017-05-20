@@ -18,6 +18,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'haml-rails'
 gem 'erb2haml'
+gem 'font-awesome-rails'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platform: :mri
