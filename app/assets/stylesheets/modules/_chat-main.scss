@@ -1,11 +1,11 @@
 html,body {
   height: 100%;
+  width: 100%;
   margin: 0 auto;
 }
-
 .notification {
-  background-color: #38AEF0;
-  color: #ffffff;
+  background-color: $SkyBlue;
+  color: $White;
   text-align: center;
 }
 
@@ -22,7 +22,7 @@ html,body {
       @include clearfix();
       background-color: #253141;
       height: 50px;
-      color: #ffffff;
+      color: $White;
       padding: 35px 20px 20px 20px;
       &__name {
         float: left;
@@ -44,7 +44,7 @@ html,body {
         padding: 0 20px;
         .chat-group {
           padding: 20px 0 40px 0;
-          color: #ffffff;
+          color: $White;
         &__name {
           p {
             font-size: 15px;
@@ -63,7 +63,7 @@ html,body {
     position: relative;
     display: inline-block;
     height: 100%;
-    width: calc(100vw - 300px);
+    width: $wdh;
     @include clearfix();
     .chat-header {
       border-bottom: 1px solid #eeeeee;
@@ -78,7 +78,7 @@ html,body {
         }
         p {
           font-size: 12px;
-          color: #999999;
+          color: $Gray;
         }
       }
       &__right {
@@ -100,8 +100,9 @@ html,body {
     .chat-body {
       display: inline-block;
       background-color: #FAFAFA;
-      height: calc(100% - 195px);
-      width: calc(100vw - 300px);
+      height: calc(100% - 220px);
+      width: $wdh;
+      @include clearfix();
       .chat-messages {
         padding: 46px 0px 40px 40px;
         .chat-message {
@@ -110,7 +111,7 @@ html,body {
             p {
               font-size: 16px;
               font-weight: bold;
-              color: #434A54;
+              color: $Black;
               float: left;
               padding-right: 10px;
             }
@@ -118,7 +119,7 @@ html,body {
           &__time {
             p {
               font-size: 12px;
-              color: #999999;
+              color: $Gray;
               float: left;
               line-height: 25px;
             }
@@ -126,7 +127,7 @@ html,body {
           &__text {
             p {
               font-size: 14px;
-              color: #434A54;
+              color: $Black;
               clear: both;
               padding-bottom: 40px;
               padding-top: 10px;
@@ -139,7 +140,7 @@ html,body {
       right: 0;
       bottom: 0;
       left:0;
-      position: absolute;
+      position: relative;
       background-color: #dddddd;
       padding: 20px 40px;
       height: 50px;
@@ -175,9 +176,9 @@ html,body {
         border: none;
         width: 100px;
         height: 50px;
-        background-color: #38AEF0;
+        background-color: $SkyBlue;
         line-height: 50px;
-        color: #fff;
+        color: $White;
         display: inline-block;
         float: right;
       }
