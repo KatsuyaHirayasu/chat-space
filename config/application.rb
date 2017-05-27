@@ -8,14 +8,12 @@ Bundler.require(*Rails.groups)
 
 module ChatSpace
   class Application < Rails::Application
+
     config.generators do |g|
-      g.test_framework  nil
-      g.assets  false
       g.helper false
-      g.stylesheets false
+      g.assets false
+      g.test_framework false
     end
     config.i18n.default_locale = :ja
-
-     config.time_zone = 'Tokyo'
   end
 end

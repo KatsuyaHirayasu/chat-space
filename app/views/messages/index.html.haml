@@ -1,15 +1,13 @@
-.notification
-  %p チャットグループが作成されました
-
 .chat
   .sidebar
     .chat-user
-      .chat-user__name
-        %h5 Yuta Katahira
-      .chat-user__btn
-        %i
-          = fa_icon "pencil-square-o"
-          = fa_icon "cog"
+      %h5 #{@user.name}
+      .chat-user__btns
+        %a.chat-user__btn
+          %i.fa.fa-pencil-square-o
+        = link_to edit_user_registration_path, class: "chat-user__btn" , style: "color:white" do
+          %i.fa.fa-cog
+
     .chat-groups
       .chat-group
         .chat-group__name
@@ -49,6 +47,5 @@
       .chat-footer__body
         %textarea{row: "1", placeholder: "type a message"}
         .chat-footer__file
-          %i
-            = fa_icon "image"
+          %i.fa.fa-image
       %input{type: "submit", value: 'Send'}

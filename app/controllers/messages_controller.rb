@@ -1,8 +1,5 @@
 class MessagesController < ApplicationController
-
-  before_action :autenticate_user!, except: :index
-
   def index
+    @user = current_user
   end
-
 end
