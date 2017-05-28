@@ -1,7 +1,9 @@
+
 .chat
   .sidebar
     .chat-user
-      %h5 #{@user.name}
+      %h5
+        = current_user.name
       .chat-user__btns
         %a.chat-user__btn
           %i.fa.fa-pencil-square-o
