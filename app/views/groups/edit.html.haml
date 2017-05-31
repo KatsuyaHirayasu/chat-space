@@ -1,0 +1,20 @@
+.chat-group-form
+  %h1チャットグループ編集
+  = form_for (@group), class: 'edit_chat_group', id: 'edit_chat_group_22', url: {action: :update}, accept: {charset: 'UTF-8'}, method: :patch do |g|
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        = g.label 'グループ名', class: 'chat-group-form__label'
+      .chat-group-form__field--right
+        = g.text_field :name, placeholder: "グループ名を入力してください", id: 'chat_group_name', class: 'chat-group-form__input'
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        = g.label '追加したいチャットメンバー', class: 'chat-group-form__label'
+      .chat-group-form__field--right
+        #chat-group-users
+          #chat-group-user-22.chat-group-user.clearfix
+            = g.collection_check_boxes(:user_ids, User.all, :id, :name) do |t|
+              = t.label { t.check_box + t.text }
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+      .chat-group-form__field--right
+        = g.submit 'Save', class: 'chat-group-form__action-btn'
