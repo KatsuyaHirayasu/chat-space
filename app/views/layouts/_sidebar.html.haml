@@ -1,14 +1,15 @@
-.chat-user
-  %h5
-    = current_user.name
-  .chat-user__btn
-  = link_to edit_user_registration_path, class: "chat-user__btn", style: "color:white" do
-    %i.fa.fa-cog
-  = link_to new_group_path, class: "chat-user__btn", style: "color:white" do
-    %i.fa.fa-pencil-square-o
-%ul.chat-groups
-  - @groups.each do |group|
-    %li.chat-group
-      = link_to group_path(@group), class: 'chat-group__link', style: "color:white" do
-        %p.chat-group__name
-          = group.name
+.sidebar
+  .chat-user
+    %h5
+      = current_user.name
+    .chat-user__btn
+    = link_to edit_user_registration_path, class: "chat-user__btn", style: "color:white" do
+      %i.fa.fa-cog
+    = link_to new_group_path, class: "chat-user__btn", style: "color:white" do
+      %i.fa.fa-pencil-square-o
+  %ul.chat-groups
+    - @groups.each do |group|
+      %li.chat-group
+        = link_to group_path(@group), class: 'chat-group__link', style: "color:white" do
+          %p.chat-group__name
+            = group.name

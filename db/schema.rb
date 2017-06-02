@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 20170531032810) do
 
   create_table "group_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "group_id",   null: false
-    t.integer  "user_id",    null: false
+    t.integer  "group_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_group_users_on_group_id", using: :btree
@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 20170531032810) do
   end
 
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",                  null: false
-    t.integer  "group_id",                 null: false
+    t.integer  "user_id"
+    t.integer  "group_id"
     t.text     "content",    limit: 65535
     t.string   "image"
     t.datetime "created_at",               null: false
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 20170531032810) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "group_users", "groups"
+  add_foreign_key "group_users", "users"
   add_foreign_key "messages", "groups"
   add_foreign_key "messages", "users"
 end
