@@ -39,10 +39,10 @@ html,body {
         padding: 0 20px;
         .chat-group {
           padding: 20px 0 40px 0;
-          color: $White;
           list-style: none;
           &__link {
             text-decoration: none;
+            color: $White;
           }
           &__name {
             p {
@@ -69,6 +69,7 @@ html,body {
     .chat-header {
       border-bottom: 1px solid #eeeeee;
       height: 105px;
+      @include clearfix();
       &__left {
         float: left;
         padding-left: 40px;
