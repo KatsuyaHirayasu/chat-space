@@ -1,11 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update]
 
-    def index
-      @order = current_user.groups
-      @groups = @order.order("created_at desc")
-    end
-
     def new
       @group = Group.new
       @users = User.all.where.not(id: current_user.id)
