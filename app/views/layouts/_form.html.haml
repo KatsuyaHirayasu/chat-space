@@ -1,0 +1,24 @@
+.chat-group-form
+  %h1新規チャットグループ
+  = form_for (@group), class: 'new_chat_group' do |f|
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        = f.label 'グループ名', class: 'chat-group-form__label'
+      .chat-group-form__field--right
+        = f.text_field :name, placeholder: "グループ名を入力してください", id: 'chat_group_name', class: 'chat-group-form__input'
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        = f.label 'チャットメンバー追加', class: 'chat-group-form__label'
+      .chat-group-form__field--right
+        .chat-group-user.clearfix
+          = f.collection_check_boxes(:user_ids, @users, :id, :name)
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        = f.label 'チャットメンバー', class: 'chat-group-form__label'
+      .chat-group-form__field--right
+        .chat-group-user.clearfix
+          = @users.pluck(:name).join(",")
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+      .chat-group-form__field--right
+        = f.submit 'Save', class: 'chat-group-form__action-btn'

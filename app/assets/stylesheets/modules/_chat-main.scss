@@ -20,7 +20,6 @@ html,body {
       height: 66px;
       background-color: #253141;
       h5 {
-     
         float: left;
         font-size: 16px;
         letter-spacing: 2px;
@@ -28,31 +27,39 @@ html,body {
         line-height: 60px;
         color: $White;
       }
-      &__btns {
+      &__btn {
         float: right;
         line-height: 60px;
         color: $White;
+        text-decoration: none;
+        letter-spacing: 6px;
       }
     }
       .chat-groups {
         padding: 0 20px;
         .chat-group {
           padding: 20px 0 40px 0;
-          color: $White;
-        &__name {
-          p {
-            font-size: 15px;
+          list-style: none;
+          &__link {
+            text-decoration: none;
+            color: $White;
           }
-        }
-        &__message {
-          margin: 5px 0 0 0;
-          p {
-            font-size: 11px;
+          &__name {
+            p {
+              font-size: 15px;
+              list-style: none;
+            }
+          }
+          &__message {
+            margin: 5px 0 0 0;
+            p {
+              font-size: 11px;
+              list-style: none;
+            }
           }
         }
       }
     }
-  }
   .chat-main {
     position: relative;
     display: inline-block;
@@ -62,6 +69,7 @@ html,body {
     .chat-header {
       border-bottom: 1px solid #eeeeee;
       height: 105px;
+      @include clearfix();
       &__left {
         float: left;
         padding-left: 40px;
@@ -75,7 +83,7 @@ html,body {
           color: $Gray;
         }
       }
-      &__right {
+      &__btns {
         float: right;
         padding-right: 40px;
         padding-top: 28px;
@@ -95,7 +103,6 @@ html,body {
       display: inline-block;
       background-color: #FAFAFA;
       height: calc(100% - 195px);
-
       width: $wdh;
       @include clearfix();
       .chat-messages {
