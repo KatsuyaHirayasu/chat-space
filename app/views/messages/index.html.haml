@@ -4,13 +4,13 @@
     .chat-header
       .chat-header__left
         %h2
-          / = @group.name
+          = @group.name
         %p
           Members:
-          / = @group.users.pluck(:name).join(",")
+          = @group.users.pluck(:name).join(",")
       .chat-header__btns
         .chat-header__btn
-        / = link_to "Edit", edit_group_path(@group), class: "chat-header__btn"
+        = link_to "Edit", edit_group_path(@group), class: "chat-header__btn"
     .chat-body
       .chat-messages
         .chat-message

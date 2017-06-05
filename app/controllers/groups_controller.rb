@@ -1,9 +1,13 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: %i(edit update)
 
+    def index
+      @groups = current_user.groups
+    end
+
     def new
       @group = Group.new
-      @users = User.where.not(id: current_user.id)
+      @users = User.where.not(id: current_user)
     end
 
     def create
@@ -22,7 +26,7 @@ class GroupsController < ApplicationController
     end
 
     def edit
-      @users = User.where.not(id: current_user.id)
+      @users = User.where.not(id: current_user)
     end
 
     def update
