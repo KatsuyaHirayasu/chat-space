@@ -1,9 +1,9 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show, :edit, :update]
+  before_action :set_group, only: %i(edit update)
 
     def new
       @group = Group.new
-      @users = User.all.where.not(id: current_user.id)
+      @users = User.where.not(id: current_user.id)
     end
 
     def create
@@ -17,13 +17,12 @@ class GroupsController < ApplicationController
       end
     end
 
-    def edit
-      @users = User.all.where.not(id: current_user.id)
+    def show
+      @groups = current_user.groups
     end
 
-    def show
-      @order = current_user.groups
-      @groups = @order.order("created_at desc")
+    def edit
+      @users = User.where.not(id: current_user.id)
     end
 
     def update
