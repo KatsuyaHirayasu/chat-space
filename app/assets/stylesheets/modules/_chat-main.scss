@@ -45,17 +45,13 @@ html,body {
             color: $White;
           }
           &__name {
-            p {
               font-size: 15px;
               list-style: none;
-            }
           }
           &__message {
             margin: 5px 0 0 0;
-            p {
-              font-size: 11px;
-              list-style: none;
-            }
+            font-size: 11px;
+            list-style: none;
           }
         }
       }
@@ -110,24 +106,19 @@ html,body {
         .chat-message {
           @include clearfix();
           &__user {
-            p {
               font-size: 16px;
               font-weight: bold;
               color: $Black;
               float: left;
               padding-right: 10px;
-            }
           }
           &__time {
-            p {
               font-size: 12px;
               color: $Gray;
               float: left;
               line-height: 25px;
-            }
           }
           &__text {
-            p {
               font-size: 14px;
               color: $Black;
               clear: both;
@@ -137,7 +128,6 @@ html,body {
           }
         }
       }
-    }
     .chat-footer {
       right: 0;
       bottom: 0;
@@ -147,34 +137,34 @@ html,body {
       padding: 20px 40px;
       height: 50px;
       @include clearfix();
-      form {
+      &__form {
         display: block;
-        float: left;
+        float: right;
       }
-      &__body {
-        position: absolute;
-        textarea {
-          width: calc(100vw - 515px);
-          padding-left: 10px;
-          padding-right: 10px;
-          line-height: 50px;
-          height: 50px;
-          resize: none;
-          border: none;
-        }
-      }
-        &__file {
+        &__body {
           position: absolute;
-          display: inline-block;
-          text-align: center;
-          line-height: 50px;
-          right: 11px;
-          bottom: 6px;
-          text-align: center;
-          cursor: pointer;
-          opacity: 0.7;
+          .message {
+            width: calc(100vw - 515px);
+            padding-left: 10px;
+            padding-right: 10px;
+            line-height: 50px;
+            height: 50px;
+            resize: none;
+            border: none;
+          }
+          .image-file {
+            position: absolute;
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+            right: 11px;
+            bottom: 2px;
+            text-align: center;
+            cursor: pointer;
+            opacity: 0.7;
+          }
         }
-      input {
+      .submit {
         border: none;
         width: 100px;
         height: 50px;
