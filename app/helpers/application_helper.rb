@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def times
+  def times(message)
     created_at.to_s(:default)
   end
 end
