@@ -64,7 +64,7 @@ html,body {
     @include clearfix();
     .chat-header {
       border-bottom: 1px solid #eeeeee;
-      height: 105px;
+      height: 106px;
       @include clearfix();
       &__left {
         float: left;
@@ -96,9 +96,8 @@ html,body {
       }
     }
     .chat-body {
-      display: inline-block;
       background-color: #FAFAFA;
-      height: calc(100% - 195px);
+      height: calc(100% - 197px);
       width: $wdh;
       @include clearfix();
       .chat-messages {
@@ -132,6 +131,7 @@ html,body {
       right: 0;
       bottom: 0;
       left:0;
+      top: 0;
       position: relative;
       background-color: #dddddd;
       padding: 20px 40px;
