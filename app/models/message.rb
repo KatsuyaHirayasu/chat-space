@@ -3,5 +3,4 @@ class Message < ApplicationRecord
   belongs_to :group
 
   validates :content, presence: true
-  include ApplicationHelper
 end
