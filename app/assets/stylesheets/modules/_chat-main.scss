@@ -45,17 +45,13 @@ html,body {
             color: $White;
           }
           &__name {
-            p {
               font-size: 15px;
               list-style: none;
-            }
           }
           &__message {
             margin: 5px 0 0 0;
-            p {
-              font-size: 11px;
-              list-style: none;
-            }
+            font-size: 11px;
+            list-style: none;
           }
         }
       }
@@ -68,7 +64,7 @@ html,body {
     @include clearfix();
     .chat-header {
       border-bottom: 1px solid #eeeeee;
-      height: 105px;
+      height: 106px;
       @include clearfix();
       &__left {
         float: left;
@@ -100,34 +96,28 @@ html,body {
       }
     }
     .chat-body {
-      display: inline-block;
       background-color: #FAFAFA;
-      height: calc(100% - 195px);
+      height: calc(100% - 197px);
       width: $wdh;
+      overflow-y: scroll;
       @include clearfix();
       .chat-messages {
         padding: 46px 0px 40px 40px;
         .chat-message {
-          @include clearfix();
           &__user {
-            p {
               font-size: 16px;
               font-weight: bold;
               color: $Black;
               float: left;
               padding-right: 10px;
-            }
           }
           &__time {
-            p {
               font-size: 12px;
               color: $Gray;
               float: left;
               line-height: 25px;
-            }
           }
           &__text {
-            p {
               font-size: 14px;
               color: $Black;
               clear: both;
@@ -137,52 +127,52 @@ html,body {
           }
         }
       }
-    }
     .chat-footer {
       right: 0;
       bottom: 0;
       left:0;
+      top: 0;
       position: relative;
       background-color: #dddddd;
       padding: 20px 40px;
       height: 50px;
       @include clearfix();
-      form {
-        display: block;
-        float: left;
+      &__form {
+        float: right;
       }
-      &__body {
-        position: absolute;
-        textarea {
-          width: calc(100vw - 515px);
-          padding-left: 10px;
-          padding-right: 10px;
-          line-height: 50px;
-          height: 50px;
-          resize: none;
-          border: none;
+        &__body {
+          .message {
+            width: calc(100vw - 515px);
+            padding-left: 10px;
+            padding-right: 10px;
+            line-height: 50px;
+            height: 50px;
+            resize: none;
+            border: none;
+          }
+          .image-file {
+            position: absolute;
+            opacity: 0.7;
+            right: 165px;
+            top: 33px;
+            .file {
+            position: absolute;
+            display: none;
+          }
         }
       }
-        &__file {
-          position: absolute;
-          display: inline-block;
-          text-align: center;
-          line-height: 50px;
-          right: 11px;
-          bottom: 6px;
-          text-align: center;
-          cursor: pointer;
-          opacity: 0.7;
-        }
-      input {
+      .submit {
+        text-align: center;
         border: none;
         width: 100px;
         height: 50px;
+        right: 40px;
+        bottom: 20px;
+        position: absolute;
         background-color: $SkyBlue;
         line-height: 50px;
         color: $White;
         display: inline-block;
-        float: right;
       }
     }
   }
