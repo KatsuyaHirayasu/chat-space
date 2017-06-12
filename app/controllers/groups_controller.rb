@@ -14,15 +14,11 @@ class GroupsController < ApplicationController
       @group = Group.new(group_params)
       if @group.save
         @group.users << current_user
-        redirect_to group_path(@group), notice: 'グループが作成されました'
+        redirect_to group_messages_path(@group), notice: 'グループが作成されました'
       else
         flash.now[:alert] = 'グループに失敗しました'
         render :new
       end
-    end
-
-    def show
-      @groups = current_user.groups
     end
 
     def edit
@@ -32,7 +28,7 @@ class GroupsController < ApplicationController
     def update
       if @group.update(group_params)
         @group.users << current_user
-        redirect_to group_path(@group), notice: '更新に成功しました'
+        redirect_to group__messages_path(@group), notice: '更新に成功しました'
       else
         flash.now[:alert] = '更新に失敗しました'
         render :edit
