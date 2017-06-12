@@ -99,6 +99,7 @@ html,body {
       background-color: #FAFAFA;
       height: calc(100% - 197px);
       width: $wdh;
+      overflow-y: scroll;
       @include clearfix();
       .chat-messages {
         padding: 46px 0px 40px 40px;
